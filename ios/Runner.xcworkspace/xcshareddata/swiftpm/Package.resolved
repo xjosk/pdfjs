@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "pdfview-freedraw",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ClassicalDude/pdfView-Freedraw",
+      "state" : {
+        "branch" : "SPM",
+        "revision" : "9c1da497dba05a67c9faba4924c2f8a981669913"
+      }
+    }
+  ],
+  "version" : 2
+}
