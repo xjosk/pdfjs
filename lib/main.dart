@@ -136,9 +136,9 @@ class _MyHomePageState extends State<MyHomePage> {
             onPageFinished: (_) async {
               // final string = await navigateToPdfView();
               // if (string.isEmpty) return;
-              webViewController.webViewController.runJavascript(
-                  'document.getElementById("pdfEmbed").src = "data:application/pdf;base64,$string";'
-                  );
+              // webViewController.webViewController.runJavascript(
+              //     'document.getElementById("pdfEmbed").src = "data:application/pdf;base64,$string";'
+              //     );
             },
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (controller) {
