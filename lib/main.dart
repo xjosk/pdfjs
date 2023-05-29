@@ -126,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
       children: [
         Expanded(
           child: WebViewPlus(
+            
             javascriptChannels: {
               JavascriptChannel(
                   name: 'Flutter',
