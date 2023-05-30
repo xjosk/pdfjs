@@ -126,7 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
       children: [
         Expanded(
           child: WebViewPlus(
-            
             javascriptChannels: {
               JavascriptChannel(
                   name: 'Flutter',
@@ -135,11 +134,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   })
             },
             onPageFinished: (_) async {
-              // final string = await navigateToPdfView();
-              // if (string.isEmpty) return;
-              // webViewController.webViewController.runJavascript(
-              //     'document.getElementById("pdfEmbed").src = "data:application/pdf;base64,$string";'
-              //     );
+              webViewController.webViewController.runJavascript("""
+      var pdfAsDataUri = 'JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwogIC9QYWdlcyAyIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKICAvVHlwZSAvUGFnZXMKICAvTWVkaWFCb3ggWyAwIDAgMjAwIDIwMCBdCiAgL0NvdW50IDEKICAvS2lkcyBbIDMgMCBSIF0KPj4KZW5kb2JqCgozIDAgb2JqCjw8CiAgL1R5cGUgL1BhZ2UKICAvUGFyZW50IDIgMCBSCiAgL1Jlc291cmNlcyA8PAogICAgL0ZvbnQgPDwKICAgICAgL0YxIDQgMCBSIAogICAgPj4KICA+PgogIC9Db250ZW50cyA1IDAgUgo+PgplbmRvYmoKCjQgMCBvYmoKPDwKICAvVHlwZSAvRm9udAogIC9TdWJ0eXBlIC9UeXBlMQogIC9CYXNlRm9udCAvVGltZXMtUm9tYW4KPj4KZW5kb2JqCgo1IDAgb2JqICAlIHBhZ2UgY29udGVudAo8PAogIC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJUCjcwIDUwIFRECi9GMSAxMiBUZgooSGVsbG8sIHdvcmxkISkgVGoKRVQKZW5kc3RyZWFtCmVuZG9iagoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNzkgMDAwMDAgbiAKMDAwMDAwMDE3MyAwMDAwMCBuIAowMDAwMDAwMzAxIDAwMDAwIG4gCjAwMDAwMDAzODAgMDAwMDAgbiAKdHJhaWxlcgo8PAogIC9TaXplIDYKICAvUm9vdCAxIDAgUgo+PgpzdGFydHhyZWYKNDkyCiUlRU9G';
+      var blob = base64ToBlob(pdfAsDataUri);
+      var url = URL.createObjectURL(blob);
+
+      document.getElementById('pdf-js-viewer').setAttribute('src', 'web/viewer.html?file='+url);
+
+      function base64ToBlob(base64) {
+        const binaryString = window.atob(base64);
+        const len = binaryString.length;
+        const bytes = new Uint8Array(len);
+        for (let i = 0; i < len; ++i) {
+          bytes[i] = binaryString.charCodeAt(i);
+        }
+      
+        return new Blob([bytes], { type: 'application/pdf' });
+      };
+""");
             },
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (controller) {
