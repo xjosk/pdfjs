@@ -12129,22 +12129,22 @@ class Toolbar {
         value: this.value
       });
     });
-    scaleSelect.addEventListener("change", function () {
-      if (this.value === "custom") {
-        return;
-      }
-      self.eventBus.dispatch("scalechanged", {
-        source: self,
-        value: this.value
-      });
-    });
-    scaleSelect.addEventListener("click", function (evt) {
-      const target = evt.target;
-      if (this.value === self.pageScaleValue && target.tagName.toUpperCase() === "OPTION") {
-        this.blur();
-      }
-    });
-    scaleSelect.oncontextmenu = _ui_utils.noContextMenuHandler;
+    // scaleSelect.addEventListener("change", function () {
+    //   if (this.value === "custom") {
+    //     return;
+    //   }
+    //   self.eventBus.dispatch("scalechanged", {
+    //     source: self,
+    //     value: this.value
+    //   });
+    // });
+    // scaleSelect.addEventListener("click", function (evt) {
+    //   const target = evt.target;
+    //   if (this.value === self.pageScaleValue && target.tagName.toUpperCase() === "OPTION") {
+    //     this.blur();
+    //   }
+    // });
+    // scaleSelect.oncontextmenu = _ui_utils.noContextMenuHandler;
     this.eventBus._on("localized", () => {
       this.#wasLocalized = true;
       this.#adjustScaleWidth();

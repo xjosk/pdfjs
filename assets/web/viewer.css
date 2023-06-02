@@ -1429,14 +1429,16 @@ body {
 .secondaryToolbar,
 .editorParamsToolbar {
   position: relative;
-  height: 32px;
+  /* height: 32px; */
+  height: 100px;
   background-color: var(--toolbar-bg-color);
   box-shadow: var(--toolbar-box-shadow);
   border-bottom: var(--toolbar-border-bottom);
 }
 
 #toolbarViewer {
-  height: 32px;
+  /* height: 32px; */
+  height: 100px;
 }
 
 #loadingBar {
@@ -1723,6 +1725,9 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  /* background-color: aqua; */
+  width: 280px;
+  height: 70px;
 }
 
 #toolbarViewerLeft,
@@ -1747,10 +1752,20 @@ body {
 #toolbarViewerLeft {
   -webkit-padding-start: 1px;
           padding-inline-start: 1px;
+  /* background-color: aqua; */
+  width: 325px;
+  height: 70px;
 }
 #toolbarViewerRight {
-  -webkit-padding-end: 1px;
-          padding-inline-end: 1px;
+  /* tamaña del contenedor */
+  -webkit-padding-end: 80px;
+          padding-inline-end: 80px;
+  transform: scaleX(var(--dir-factor));
+  width: 250px;
+  height: 70px;
+  /* background-color: aqua; */
+        
+    
 }
 #toolbarSidebarRight {
   -webkit-padding-end: 2px;
@@ -1945,12 +1960,25 @@ body {
   -webkit-mask-image: var(--toolbarButton-sidebarToggle-icon);
           mask-image: var(--toolbarButton-sidebarToggle-icon);
   transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  /* margin-left:20px; */
 }
+
 
 #secondaryToolbarToggle::before {
   -webkit-mask-image: var(--toolbarButton-secondaryToolbarToggle-icon);
           mask-image: var(--toolbarButton-secondaryToolbarToggle-icon);
   transform: scaleX(var(--dir-factor));
+  /* margin-left: 50px; */
+  /* margin-left: 20px; */
+  /* float: left; */
+  /* padding-right: 20px; */
+  width: 50px;
+  height: 50px;
+  
+  margin-left:110px;
+
 }
 
 #findPrevious::before {
@@ -1966,21 +1994,38 @@ body {
 #previous::before {
   -webkit-mask-image: var(--toolbarButton-pageUp-icon);
           mask-image: var(--toolbarButton-pageUp-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  margin-left:30px;
 }
 
 #next::before {
   -webkit-mask-image: var(--toolbarButton-pageDown-icon);
           mask-image: var(--toolbarButton-pageDown-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  margin-left:44px;
 }
 
 #zoomOut::before {
   -webkit-mask-image: var(--toolbarButton-zoomOut-icon);
           mask-image: var(--toolbarButton-zoomOut-icon);
+          transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;  
+  margin-left:20px;
+
 }
 
 #zoomIn::before {
   -webkit-mask-image: var(--toolbarButton-zoomIn-icon);
           mask-image: var(--toolbarButton-zoomIn-icon);
+          transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  margin-left:50px;
 }
 
 #presentationMode::before {
@@ -1991,27 +2036,52 @@ body {
 #editorFreeText::before {
   -webkit-mask-image: var(--toolbarButton-editorFreeText-icon);
           mask-image: var(--toolbarButton-editorFreeText-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  margin-left:70px;
 }
 
 #editorInk::before {
   -webkit-mask-image: var(--toolbarButton-editorInk-icon);
           mask-image: var(--toolbarButton-editorInk-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  margin-left:90px;
 }
 
 #print::before,
 #secondaryPrint::before {
   -webkit-mask-image: var(--toolbarButton-print-icon);
           mask-image: var(--toolbarButton-print-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  margin-left:20px;
+   /* margin-right:150px; */
+             
 }
 
 :is(#openFile, #secondaryOpenFile)::before {
   -webkit-mask-image: var(--toolbarButton-openFile-icon);
           mask-image: var(--toolbarButton-openFile-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  /* margin-right:50px; */
+  
 }
 
 :is(#download, #secondaryDownload)::before {
   -webkit-mask-image: var(--toolbarButton-download-icon);
           mask-image: var(--toolbarButton-download-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  margin-left:50px;
+  /* margin-right:50px; */
+               
 }
 
 a.secondaryToolbarButton {
@@ -2058,6 +2128,10 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"] {
 #viewFind::before {
   -webkit-mask-image: var(--toolbarButton-search-icon);
           mask-image: var(--toolbarButton-search-icon);
+  transform: scaleX(var(--dir-factor));
+  width: 50px;
+  height: 50px;
+  /* margin-left:20px; */
 }
 
 .pdfSidebarNotification::after {
@@ -2206,8 +2280,12 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"] {
   -moz-appearance: textfield; /* hides the spinner in moz */
   text-align: end;
   width: 40px;
+  height: 40px;
   background-size: 0 0;
   transition-property: none;
+  
+  margin-left:72px;
+
 }
 #pageNumber.visiblePageIsLoading {
   background-image: var(--loading-icon);
@@ -2218,9 +2296,10 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"] {
      consequently we use background-size. */
   transition-property: background-size;
   transition-delay: var(--loading-icon-delay);
+  
 }
 #pageNumber::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  -webkit-appearance: none
 }
 
 .toolbarField:focus {
@@ -2245,7 +2324,12 @@ a:is(.toolbarButton, .secondaryToolbarButton)[href="#"] {
 #numPages.toolbarLabel {
   -webkit-padding-start: 3px;
           padding-inline-start: 3px;
+  transform: scaleX(var(--dir-factor));
+  /* width: 50px;
+  height: 50px; */
+  /* margin-left:70px; */
 }
+
 
 #thumbnailView,
 #outlineView,
@@ -2608,5 +2692,10 @@ dialog :link {
 @media all and (max-width: 560px) {
   #scaleSelectContainer {
     display: none;
+    transform: scaleX(var(--dir-factor));
+    /* width: 50px;
+    height: 50px; */
+    margin-left:40px;
   }
 }
+
