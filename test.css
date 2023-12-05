@@ -1,3 +1,7 @@
 .activation-form .submit-button {
   color: red;
 }
+
+.activation-form {
+  background-color: lightblue;
+}
