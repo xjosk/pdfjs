@@ -1,0 +1,11 @@
+.list .pan .copy-icon {
+    color: #0074E6;
+}
+
+.list .pan .wrapper .copy-icon {
+    margin-left: 25%;
+}
+
+.list {
+    box-shadow: none;
+}
